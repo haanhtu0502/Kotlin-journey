@@ -9,9 +9,10 @@ private val retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
     .build()
 
+
 val recipeService = retrofit.create(ApiService::class.java)
 
 interface ApiService {
-    @GET
+    @GET("categories.php")
     suspend fun getCategories(): CategoriesRespond
 }
